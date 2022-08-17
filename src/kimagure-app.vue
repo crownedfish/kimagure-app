@@ -45,6 +45,18 @@ export default {
         menuItem.totalcost = menuItem.quantity * menuItem.unitcost;
         this.grandtotal -= menuItem.unitcost;
       }
+    },
+    reset() {
+      this.menuChoices[0].quantity=0;
+      this.menuChoices[0].totalcost=0;
+      this.menuChoices[1].quantity=0;
+      this.menuChoices[1].totalcost=0;
+      this.menuChoices[2].quantity=0;
+      this.menuChoices[2].totalcost=0;
+      this.menuChoices[3].quantity=0;
+      this.menuChoices[3].totalcost=0;
+      this.grandtotal=0;
+      this.setOrderId();
     }
     /*
     addTodo() {

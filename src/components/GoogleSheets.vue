@@ -15,6 +15,7 @@
 		methods: {
 			async saveData() {
                 console.log("saveData entered");
+				if(confirm("注文を確定しますか？") == false) { return; }
 				console.log("Opening Google Spreadsheet");
 				const doc = new GoogleSpreadsheet('13AvjKcjdtakog2INyWTIGg8xTpkiD9nusMIJnkyaYL0');
 				await doc.useServiceAccountAuth(creds);
@@ -37,6 +38,7 @@
 						await sheet.addRow(newRow);
 					}
 				}
+				this.$parent.reset();
                 console.log("saveData ended");
 			}
 		}
